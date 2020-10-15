@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+section {
+    position: relative;
+    min-height: 100vh; */
+    width: 100%;
+    background-color: #0062be;
+    transition: 0.5s;
+}
+
+.nav-header {
+    padding: 20px 0px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid white; */
+}
+
+.logo img {
+    height: 60px;
+    margin-left: 40px;
+}
+
+.menu-icon {
+    margin-right: 20px;
+    height: 35px;
+    width: 35px;
+    border: 2px solid white;
+    padding: 7px 2px 7px 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 4px;
+    visibility: hidden;
+    transition: 0.25s linear;
+}
+
+
+.menu-icon:hover{
+    cursor: pointer;
+    background-color: red;
+    border-color: red;
+    transform: translateY(-7px) rotate(15deg)
+}
+
+.menu-bar {
+    height: 3px;
+    width: 80%;
+    background-color: white;
+}
+
+.nav-items {
+    list-style: none;
+    display: flex;
+    margin-right: 60px;
+}
+
+.nav-items li a {
+    display: block;
+    font-weight: 550;
+    font-size: 14px;
+    color: white;
+    padding: 12px;
+    text-decoration:none;
+    transition: 0.5s linear
+}
+
+.nav-items li a:hover {
+    background-color: rgb(250, 8, 8);
+    transform: translateY(10px);
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    /* border: 1px solid white; */
+}
+
+.content .textBox {
+    max-width: 50%;
+    padding: 0 40px;
+}
+
+.content .textBox h2 {
+    text-transform: uppercase;
+    font-size: 4em;
+    line-height: 1.4em;
+    color: white;
+    font-weight: 900;
+    margin-bottom: 20px;
+    letter-spacing: 0px;
+}
+
+.content .textBox h2 span {
+    font-size: 90px;
+    line-height: 70px;
+}
+
+.content .textbox p {
+    color: white;
+    line-height: 1.7em;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.imageBg {
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 100px;
+    transition: 0.5s all ease;
+}
+.imageBg:hover {
+   transform: translateY(-20px) rotate(360deg);
+   cursor: pointer;
+}
+
+
+.content img {
+    height: 400px;
+    transition: 0.5s ease-in-out
+}
+
+.btn-primary {
+    color: #0062be;
+    padding: 10px 30px;
+    text-decoration: none;
+    background-color: white;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 900;
+    transition: 0.5s all ease-in-out;
+
+}
+
+.btn-primary:hover {
+    color: white;
+    background-color: #0062be;
+    border: 1px solid white;
+}
+
+.thumb {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.thumb-image {
+   margin: 10px;
+   padding: 10px;
+   transition: 0.5s all linear;
+}
+.thumb-image img {
+    height: 60px
+}
+
+.thumb-image:hover {
+    background-color: white;
+    cursor: pointer;
+    transform: translateY(-10px)
+}
+
+body > section > div.thumb > div:nth-child(2) > img {
+    transform: translateY(-4px) scale(1.1)
+}
+
+body > section > div.thumb > div:nth-child(3) > img {
+    transform: scale(1.3)
+}
+
+@media screen and (min-width: 721px) and (max-width: 1200px) {
+    .content .textBox h2  {
+        font-size: 30px
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 720px) {
+
+    section {
+        padding: 0 0 70px 0;
+        align-items: flex-start;
+    }
+
+    .nav-items {
+        display: block;
+        margin-top: 10px;
+        margin-right: 0;
+        width: 100%;
+        height: 0px;
+        overflow: hidden;
+        transition: 0.5s linear
+    }
+    
+    .nav-items li a {
+        display: block;
+        background-color: #092a49;
+        transition: 0.5s linear
+    }
+    
+    .show-nav {
+        height: 200px;
+        width: 100%
+    }
+  
+    .nav-items li a:hover {
+        background-color: rgb(250, 8, 8);
+        transform: translateY(0px);
+        padding-left: 20px
+    }
+    
+    .menu-icon {
+        visibility: visible;
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: flex-start
+    }
+    .content .textBox {
+        max-width: 80%;
+        margin-top: 20px;
+        order: 2;
+    }
+
+    .content .textBox h2  {
+        font-size: 40px
+    }
+    
+    .content img {
+        margin-left: 50px;
+        order: 1;
+        height: 400px;
+        align-items: center;
+        margin-right: 20px!important;
+    }
+
+    .thumb {
+        position: absolute;
+        right: 30px;
+        transform: translateY(-870px);
+        flex-direction: column;
+    }
+
+    .thumb-image img {
+        height: 50px
+    }
+    
+
+    .thumb-image:hover {
+        transform: translateX(-10px)
+    }
+
+}
+
+
+

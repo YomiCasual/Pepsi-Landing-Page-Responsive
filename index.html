@@ -1,0 +1,80 @@
+<html lang="en">
+<head>  
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <title>Pepsi Landing Page</title>
+    <link rel="stylesheet" href="./stylesheet.css" />
+</head>
+    <body>
+        <section class="sec">
+            <header class="nav-header">
+                <a href="#" class="logo"><img src="./logo.png" /></a>
+                <div class="menu-icon">   
+                    <div class="menu-bar"></div> 
+                    <div class="menu-bar"></div>
+                    <div class="menu-bar"></div> 
+                </div>
+                <ul class="nav-items">
+                    <li><a href="#" class="navbar-items">Home</a></li>
+                    <li><a href="#" class="navbar-items">Products</a></li>
+                    <li><a href="#" class="navbar-items">What's New</a></li>
+                    <li><a href="#" class="navbar-items">Newsletters</a></li>
+                    <li><a href="#" class="navbar-items">Contacts</a></li>
+                </ul>
+            </header>
+            <div class="content">
+                <div class="textBox">
+                    <h2>introducing<br><span>pepsi can</span></h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, 
+                        adipisicing elit. Beatae, harum mollitia nihil laudantium distinctio
+                        usantium voluptates iusto, ducimus veniam, fugiat ad similique molestiae. 
+                        Minima quaerat accusantium, illo voluptatem aliquam unde!
+                    </p>
+                        <a href="#" class="btn-primary">View all products</a>
+                </div>
+                <div class="imageBg">
+                    <img src="./pepsi blue.png" alt="pepsi" class="pepsiCan">
+                </div>
+            </div>
+            <div class="thumb">
+                <div class="thumb-image">
+                    <img src="./pepsi blue.png" alt="" class="imgSlider" color="#0062be">
+                </div>
+                <div class="thumb-image">
+                    <img src="./pepsi white can.png" alt="white" class="imgSlider" color="black">
+                </div>
+                <div class="thumb-image">
+                    <img src="./black can3.png" alt="" class="imgSlider" color="red">
+                </div>
+            </div>
+        </section>
+
+
+
+        <script>
+        const navButton = document.querySelector('.menu-icon')
+        const navItems = document.querySelector('.nav-items')
+        const imageButton = document.querySelectorAll('.imgSlider')
+        const imageSlider = document.querySelector('.pepsiCan')
+        const sec = document.querySelector('.sec')
+
+        navButton.addEventListener('click', ()=> {
+        navItems.classList.toggle('show-nav')
+        })
+        imageButton.forEach((item) => {
+            item.addEventListener('click', (e) => {
+                if (e.target.getAttribute('alt') == "white") {
+                    imageSlider.style.marginRight = "100px"
+                }
+                else {
+                    imageSlider.style.marginRight = "50px"
+                }
+                imageSlider.src = e.target.src
+                sec.style.backgroundColor = e.target.getAttribute('color')
+            })
+        })
+        </script>
+    </body>
+
+
+</html>  
+
